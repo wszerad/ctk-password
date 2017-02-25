@@ -1,12 +1,12 @@
 {
 	"name": "ctk-password",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"engines" : {
 		"node" : ">=6.0.0"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/wszerad/ctk-config.git"
+		"url": "https://github.com/wszerad/ctk-password.git"
 	},
 	"dependencies": {
 		"ctk-config": "~0.1.0"
