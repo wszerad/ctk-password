@@ -3,16 +3,27 @@ const config = {
 	hashRounds: 10
 };
 
-function password(options) {
-	Object.assign(config, options);
-}
-
-password.compare = function(password, hash) {
-	return bcrypt.compare(password, hash);
+module.exports = {
+	/**
+	 * @param {object} options
+	 * @param {number} options.hashRounds
+	 */
+	setup(options) {
+		Object.assign(config, options);
+	},
+	/**
+	 * @param password
+	 * @param hash
+	 * @returns {Promise}
+	 */
+	compare(password, hash) {
+		return bcrypt.compare(password, hash);
+	},
+	/**
+	 * @param {string} password
+	 * @returns {Promise}
+	 */
+	hash(password) {
+		return bcrypt.hash(password, config.hashRounds);
+	}
 };
-
-password.hash = function(password) {
-	return bcrypt.hash(password, config.hashRounds);
-};
-
-module.exports = password;

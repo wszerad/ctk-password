@@ -1,13 +1,10 @@
 ``` js
+//one file
+password.setup({
+    hashRounds: 10
+});
 
-const config = require('ctk-config')({
-        password: {
-            hashRounds: 10
-        }
-    });
-
-const password = require('ctk-password');
-
+//others
 password.hash(password)// => Promise(hash)
 password.compare(password, hash)// => Promise(equal)
 
